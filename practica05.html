@@ -14,8 +14,8 @@
             width: 200px;
             display: inline-block;
         }
-        .clase{
-            border-radius: 100px;
+        img.redonda{
+        border-radius: 50%;
         }
     </style>
 </head>
@@ -51,11 +51,14 @@
         app.innerHTML += Picture({id:"3",nombre:"Joane"})
 
         const lista = document.querySelectorAll("img")
-        lista.forEach((elemento)=>{
-            elemento.addEventListener("click",(e)=>{
-                elemento.classList.toggle("clase");
-            })
-        })
+        for (let i = 0; i < lista.length; i++) {
+            const element = lista[i];
+            lista[i].addEventListener("click", () => {
+                //lista[i].style.borderRadius = "50%"
+                lista[i].classList.toggle("redonda")
+            });
+            
+        }
     </script>
 </body>
 </html>
